@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BOSS Job Collector</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="bar">
+      <div class="title">
+        <strong>BOSS Job Collector</strong>
+        <span id="counter" class="counter">0 条</span>
+      </div>
+      <div class="actions">
+        <button id="scan" class="primary">扫描当前页</button>
+        <button id="export-csv">导出 CSV</button>
+        <button id="export-json">导出 JSON</button>
+        <button id="clear" class="danger">清空</button>
+      </div>
+    </header>
+
+    <p id="status" class="status" role="status"></p>
+
+    <main class="list">
+      <table class="grid">
+        <thead>
+          <tr>
+            <th class="col-title">职位</th>
+            <th class="col-salary">薪资</th>
+            <th class="col-company">公司</th>
+            <th class="col-loc">地区</th>
+            <th class="col-tags">经验/学历</th>
+            <th class="col-op"></th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <p id="empty" class="empty">
+        还没有数据。打开 BOSS 直聘的职位搜索页，点「扫描当前页」。
+      </p>
+    </main>
+
+    <script src="exporters.js"></script>
+    <script src="panel.js"></script>
+  </body>
+</html>

@@ -1,0 +1,184 @@
+:root {
+  --border: #e5e7eb;
+  --muted: #6b7280;
+  --text: #111827;
+  --brand: #2563eb;
+  --warn: #b45309;
+  --danger: #b91c1c;
+  --bg: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 12px;
+  font: 13px/1.5 -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.bar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+}
+
+.title {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.counter {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+button {
+  font: inherit;
+  padding: 5px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #f9fafb;
+  color: var(--text);
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: #f3f4f6;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+button.primary {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+
+button.primary:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+button.danger {
+  color: var(--danger);
+  border-color: #fecaca;
+  background: #fef2f2;
+}
+
+button.link {
+  border: none;
+  background: none;
+  color: var(--muted);
+  padding: 0;
+  text-decoration: underline;
+}
+
+.status {
+  margin: 10px 0;
+  min-height: 1.5em;
+  color: var(--muted);
+}
+
+.status.ok {
+  color: #047857;
+}
+
+.status.error {
+  color: var(--danger);
+}
+
+.list {
+  overflow-x: auto;
+}
+
+.grid {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.grid th,
+.grid td {
+  text-align: left;
+  vertical-align: top;
+  padding: 6px 6px;
+  border-bottom: 1px solid var(--border);
+  word-break: break-word;
+}
+
+.grid th {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 12px;
+  background: #f9fafb;
+  position: sticky;
+  top: 0;
+}
+
+.col-title {
+  width: 34%;
+}
+
+.col-salary {
+  width: 16%;
+}
+
+.col-company {
+  width: 20%;
+}
+
+.col-loc {
+  width: 16%;
+}
+
+.col-tags {
+  width: 10%;
+}
+
+.col-op {
+  width: 4%;
+}
+
+.grid a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+.grid a:hover {
+  text-decoration: underline;
+}
+
+.flag {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 0 4px;
+  border-radius: 4px;
+  background: #fef3c7;
+  color: var(--warn);
+  font-size: 11px;
+  cursor: help;
+}
+
+.warn {
+  color: var(--warn);
+}
+
+.empty {
+  color: var(--muted);
+  padding: 16px 4px;
+}

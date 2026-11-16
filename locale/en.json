@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "BOSS job collector",
+    "description": "Read job cards from an already-open BOSS Zhipin search page through CDP and return them as structured data with salaries decoded from the site's private-use font mapping.",
+    "detail": "docs/DETAIL.md"
+  }
+}

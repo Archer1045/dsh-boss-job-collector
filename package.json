@@ -1,0 +1,25 @@
+{
+  "name": "dsh-boss-job-collector",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Collect BOSS 直聘 job listings from an already-open browser tab through the Chrome DevTools Protocol.",
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "src",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "docs",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

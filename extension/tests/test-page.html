@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>BOSS Job Collector · 适配器回归测试</title>
+    <style>
+      body {
+        font: 13px/1.6 -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+        margin: 20px;
+        color: #111827;
+      }
+      h1 {
+        font-size: 16px;
+      }
+      .summary {
+        padding: 8px 12px;
+        border-radius: 6px;
+        margin: 12px 0;
+        font-weight: 600;
+      }
+      .summary.pass {
+        background: #ecfdf5;
+        color: #047857;
+      }
+      .summary.fail {
+        background: #fef2f2;
+        color: #b91c1c;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 900px;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 4px 8px;
+        border-bottom: 1px solid #e5e7eb;
+        vertical-align: top;
+      }
+      th {
+        background: #f9fafb;
+        font-size: 12px;
+        color: #6b7280;
+      }
+      tr.bad td {
+        background: #fef2f2;
+      }
+      code {
+        background: #f3f4f6;
+        padding: 0 3px;
+        border-radius: 3px;
+      }
+      #fixture {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>适配器回归测试</h1>
+    <p>
+      这个页面不联网、不依赖扩展环境，直接双击打开即可。
+      数据来自下面的隐藏 fixture，结构与 BOSS 直聘搜索结果页一致。
+    </p>
+    <div id="summary" class="summary">运行中…</div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 34%">断言</th>
+          <th style="width: 8%">结果</th>
+          <th style="width: 29%">实际</th>
+          <th style="width: 29%">期望</th>
+        </tr>
+      </thead>
+      <tbody id="body"></tbody>
+    </table>
+
+    <!-- fixture：结构与真实搜索页一致，文案与链接均为虚构 -->
+    <div id="fixture">
+      <ul>
+        <li class="job-card-box">
+          <div class="job-info">
+            <div class="job-title clearfix">
+              <a class="job-name" href="https://www.zhipin.com/job_detail/87892214777757a10nJz3925EFRX.html?lid=1&securityId=2">Agent 开发工程师</a>
+              <span class="job-salary">&#xE035;&#xE031;-&#xE038;&#xE031;K·&#xE032;&#xE036;薪</span>
+            </div>
+            <ul class="tag-list">
+              <li>3-5年</li>
+              <li>本科</li>
+            </ul>
+          </div>
+          <div class="job-card-footer">
+            <span class="boss-name">北京智研科技有限公司</span>
+            <span class="company-location">北京·朝阳区</span>
+          </div>
+        </li>
+
+        <li class="job-card-box">
+          <div class="job-info">
+            <div class="job-title clearfix">
+              <a class="job-name" href="https://www.zhipin.com/job_detail/abc123.html?lid=3">大模型应用工程师</a>
+              <span class="job-salary">&#xE033;&#xE035;-&#xE035;&#xE036;K</span>
+            </div>
+            <ul class="tag-list">
+              <li>1-3年</li>
+              <li>硕士</li>
+            </ul>
+          </div>
+          <div class="job-card-footer">
+            <span class="boss-name">上海云图信息技术有限公司</span>
+            <span class="company-location">上海·浦东新区</span>
+          </div>
+        </li>
+
+        <li class="job-card-box">
+          <div class="job-info">
+            <div class="job-title clearfix">
+              <a class="job-name" href="https://www.zhipin.com/job_detail/def456.html">算法工程师（薪资异常样本）</a>
+              <span class="job-salary">待定</span>
+            </div>
+            <ul class="tag-list">
+              <li>不限</li>
+              <li>本科</li>
+            </ul>
+          </div>
+          <div class="job-card-footer">
+            <span class="boss-name">杭州样本科技有限公司</span>
+            <span class="company-location">杭州·西湖区</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <script src="../src/boss-adapter.js"></script>
+    <script src="../src/exporters.js"></script>
+    <script src="assertions.js"></script>
+    <script>
+      (function () {
+        const out = globalThis.BossAssertions.run();
+        const summary = document.getElementById("summary");
+        summary.className = `summary ${out.allPass ? "pass" : "fail"}`;
+        summary.textContent = out.allPass
+          ? `全部通过 · ${out.passed}/${out.results.length}`
+          : `有失败 · ${out.failed} 项未通过（共 ${out.results.length} 项）`;
+
+        const body = document.getElementById("body");
+        for (const r of out.results) {
+          const tr = document.createElement("tr");
+          if (!r.pass) tr.className = "bad";
+          const cells = [
+            r.name,
+            r.pass ? "PASS" : "FAIL",
+            JSON.stringify(r.actual),
+            JSON.stringify(r.expected),
+          ];
+          for (const text of cells) {
+            const td = document.createElement("td");
+            td.textContent = text;
+            tr.appendChild(td);
+          }
+          body.appendChild(tr);
+        }
+      })();
+    </script>
+  </body>
+</html>

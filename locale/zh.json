@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "BOSS 直聘岗位采集",
+    "description": "从已打开的 BOSS 直聘搜索页读取岗位列表，薪资按字体映射还原后返回结构化数据。",
+    "detail": "docs/DETAIL.md"
+  }
+}

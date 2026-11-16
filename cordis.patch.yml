@@ -1,0 +1,6 @@
+- insert:
+    - id: 'dsh-boss-job-collector'
+      name: 'dsh-boss-job-collector'
+      config:
+        port: 9222
+        maxBatches: 5

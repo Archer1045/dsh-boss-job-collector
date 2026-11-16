@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "BOSS Job Collector",
+  "version": "0.1.0",
+  "description": "把 BOSS 直聘职位列表页上可见的职位整理成表格，支持去重、预览与导出。非官方工具，不做自动翻页或爬取。",
+  "permissions": ["activeTab", "scripting", "storage", "sidePanel"],
+  "host_permissions": ["https://www.zhipin.com/*"],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "action": {
+    "default_title": "打开 BOSS Job Collector"
+  },
+  "side_panel": {
+    "default_path": "src/panel.html"
+  }
+}

@@ -1,0 +1,7 @@
+node_modules/
+.agent-handoff/
+.tmp/
+reports/
+last-run.log
+*.log
+.DS_Store
