@@ -1,0 +1,119 @@
+{
+  "generated_at": "2026-11-16T15:22:42.972Z",
+  "root": "D:/workSpace/code/boss-job-collector/",
+  "count": 8,
+  "entries": [
+    {
+      "path": "reports/boss-jobs-20261116-2020.md",
+      "bytes": 9778,
+      "sha256": "47a7ce43698ae0dafd6755e48aeb4af26e56314b72faec4589fac09eb3e56e86",
+      "readback": {
+        "kind": "text",
+        "ok": true,
+        "lines": 155,
+        "head": "# BOSS 岗位分析：agent 开发 · 北京 > 采集时间：2026-11-16 20:20（系统时间） > 页"
+      }
+    },
+    {
+      "path": "reports/boss-jobs-20261116-merged.md",
+      "bytes": 14842,
+      "sha256": "cf2f885d14278c439b2c93b39fa7ce74514d8d13cf1469258b5d29052e98ce39",
+      "readback": {
+        "kind": "text",
+        "ok": true,
+        "lines": 222,
+        "head": "# BOSS 岗位分析：agent 开发 · 北京 > 采集时间：2026-11-16 20:20 与 21:02"
+      }
+    },
+    {
+      "path": "reports/raw/boss-jobs-20261116-2020.json",
+      "bytes": 86932,
+      "sha256": "454a306363ecd59296d9501cdcd2a6aa0b2d47b50725ced1f0fef8e9a0c2e58c",
+      "readback": {
+        "kind": "json",
+        "ok": true,
+        "keys": [
+          "collected_at",
+          "page_url",
+          "page_title",
+          "count",
+          "detail_attempted",
+          "detail_ok",
+          "detail_stopped",
+          "summary"
+        ]
+      }
+    },
+    {
+      "path": "reports/raw/boss-jobs-20261116-2102-b2o20.json",
+      "bytes": 91715,
+      "sha256": "32c51768185188fdc638f2bf75b38c7ad9ef67f7038a96c127423ee66a331a2b",
+      "readback": {
+        "kind": "json",
+        "ok": true,
+        "keys": [
+          "collected_at",
+          "page_url",
+          "page_title",
+          "count",
+          "detail_attempted",
+          "detail_ok",
+          "detail_stopped",
+          "summary"
+        ]
+      }
+    },
+    {
+      "path": "reports/raw/boss-jobs-20261116-merged.json",
+      "bytes": 144220,
+      "sha256": "f2da11e4331537053c2dfcae5ca2fb526a0c92e740a2aac636c4e240224d61ce",
+      "readback": {
+        "kind": "json",
+        "ok": true,
+        "keys": [
+          "merged_at",
+          "page_url",
+          "page_title",
+          "count",
+          "detail_attempted",
+          "detail_ok",
+          "salary_rows",
+          "summary"
+        ]
+      }
+    },
+    {
+      "path": ".agent-handoff/artifacts/20261116-boss-plugin-v2-r1.log",
+      "bytes": 1547,
+      "sha256": "81ff46169bc19da8779ecb54f00a80954b62e63322eccbf645c50f82f7bca2ab",
+      "readback": {
+        "kind": "text",
+        "ok": true,
+        "lines": 88,
+        "head": "# 二期实施证据 时间：2026-11-16 20:21:20 计划：docs/execution-plan-v"
+      }
+    },
+    {
+      "path": ".agent-handoff/artifacts/20261116-boss-plugin-v2-r2.log",
+      "bytes": 1190,
+      "sha256": "795c054a49a349e9e5ab15b5a08fcce43b554ca6429300621a798d6fb6fe6cc4",
+      "readback": {
+        "kind": "text",
+        "ok": true,
+        "lines": 49,
+        "head": "# 二期第二批与文档补齐 证据 时间：2026-11-16 21:03:24 计划：docs/execution"
+      }
+    },
+    {
+      "path": ".agent-handoff/artifacts/20261116-boss-plugin-reinstall-crosscheck.log",
+      "bytes": 3707,
+      "sha256": "04a471b8e477aaa8e14e8b57878070c329419f34f1e67c9547321d1185236dad",
+      "readback": {
+        "kind": "text",
+        "ok": true,
+        "lines": 108,
+        "head": "# BOSS 插件重装与跨机器验证 证据 时间：2026-11-16 23:16 – 23:22（系统时间） 执行：DSH 阿渔"
+      }
+    }
+  ]
+}
