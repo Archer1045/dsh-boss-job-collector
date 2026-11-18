@@ -64,6 +64,9 @@ const JOB_SCHEMA = {
     title: { type: "string", required: true },
     salary: { type: "string", required: true },
     salary_unverified: { type: "boolean", required: true },
+    salary_min: { type: "number", required: true },
+    salary_max: { type: "number", required: true },
+    salary_unit: { type: "string", required: true },
     company: { type: "string", required: true },
     location: { type: "string", required: true },
     experience: { type: "string", required: true },
@@ -81,8 +84,8 @@ const JOB_SCHEMA = {
 /** 工具结果里每条 JD 最多带多少字，全文写进 raw 文件。 */
 const BRIEF_CHARS = 300;
 
-/** 原始数据目录：插件目录上两级的 reports/raw。 */
-const RAW_DIR = fileURLToPath(new URL("../../reports/raw/", import.meta.url));
+/** 原始数据目录：插件根目录下的 reports/raw（结构改造后仓库根即插件根）。 */
+const RAW_DIR = fileURLToPath(new URL("./reports/raw/", import.meta.url));
 
 /**
  * 把完整结果写到本地 JSON，供模型需要全文时按路径读取。
